@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar">
+    
+<div class="font-size-controls">
+    <button onclick="changeFontSize(1)">+</button>
+    <button onclick="changeFontSize(-1)">-</button>
+    <button onclick="resetFontSize()">reset</button>
+</div>
+
+<style>
+ 
+  .font-size-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .font-size-controls button {
+    background-color: #0b3118;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .font-size-controls button:hover {
+    background-color: #64836b;
+  }
+</style>
+
+<script>
+  let currentFontSize = 16; 
+
+  function changeFontSize(change) {
+      currentFontSize += change;
+      document.body.style.fontSize = currentFontSize + "px";
+  }
+
+  function resetFontSize() {
+      currentFontSize = 16; 
+      document.body.style.fontSize = currentFontSize + "px";
+  }
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="photos\image_transparent.png" alt="Logo" class="logo">
+<header>
+    <h1>About Hole In One</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="activities.html">Activities & Services</a></li>
+            <li><a href="pakage.html">Packages & Offers</a></li>
+            <li><a href="booknow.html">Book Now</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="main-content">
+    <div class="container">
+        <h2>Located in a Stunning Natural Area</h2>
+        <p>يقع المنتجع في منطقة طبيعية خلابة حيث تمتد المساحات الخضراء الواسعة والمناظر الطبيعية الساحرة، مما يخلق بيئة مثالية لمحبي الجولف والاسترخاء.</p>
+        <img src="photos\28251342b5f7de64f1fec14918c59238.jpg" alt="Resort" style="width:100%; border-radius:10px; margin-top:15px;">
+        <p>"هول إن ون" هو مصطلح يُستخدم في رياضة الجولف للإشارة إلى حالة نادرة ورائعة عندما يتمكن اللاعب من تسديد كرة الجولف في الحفرة من أول ضربة، أي من دون الحاجة لأي ضربات إضافية بعد ضربته الأولى. إنه أحد الأهداف المثالية والمثيرة في هذه الرياضة، ويُعتبر إنجازًا كبيرًا لأي لاعب جولف. وهذا ما عاد اليه تسمية منتجعنا، نوّد أن نكون مثل هذه الحالة النادرة والرائعة بعيون زوارنا.</p>
+    </div>
+</section>
+
+<!-- زر إظهار / إخفاء التعليقات -->
+<section id="comments">
+    <h2>تعليقات الزوار</h2>
+    <button id="toggle-comments">إظهار / إخفاء التعليقات</button>
+    <div id="comments-container">
+        <div class="comment">
+            <p class="username">عامر:</p>
+            <p class="text">"خطير المنتجع رحت عليه مع الشباب. كانت تجربة رائعة!"</p>
+        </div>
+        <div class="comment">
+            <p class="username">ليلى:</p>
+            <p class="text">"منتجع مميز جداً، الأماكن رائعة والمرافق ممتازة!"</p>
+        </div>
+        <div class="comment">
+            <p class="username">سامي:</p>
+            <p class="text">"أفضل مكان للاستجمام والراحة. سأزور المنتجع مرة أخرى بالتأكيد!"</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Hole In One Golf Resort. All Rights Reserved.</p>
+</footer>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let toggleButton = document.getElementById("toggle-comments");
+        let commentsContainer = document.getElementById("comments-container");
+
+        toggleButton.addEventListener("click", function () {
+            if (commentsContainer.style.display === "none") {
+                commentsContainer.style.display = "block";
+                toggleButton.textContent = "Hide";
+            } else {
+                commentsContainer.style.display = "none";
+                toggleButton.textContent = "Show";
+            }
+        });
+
+     
+        commentsContainer.style.display = "none";
+    });
+</script>
+<script src="backToTop.js"></script>
+</body>
+</html>

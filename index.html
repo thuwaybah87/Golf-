@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar">
+    
+    
+<button id="openPopup" style="display: none;"></button>
+
+
+<div id="notificationPopup" class="popup">
+    <div class="popup-content">
+        <p>هل تريد أن يصلك إشعارات؟</p>
+        <button onclick="enableNotifications()">نعم ✅</button>
+        <button onclick="disableNotifications()">لا ❌</button>
+    </div>
+</div>
+
+<style>
+  
+  .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+  }
+
+  .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .popup-content button {
+      margin: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+  }
+
+  .popup-content button:nth-child(2) {
+      background-color: #598139;
+      color: white;
+  }
+
+  .popup-content button:nth-child(3) {
+      background-color: #669144;
+      color: white;
+  }
+</style>
+
+<script>
+  function showPopup() {
+      document.getElementById("notificationPopup").style.display = "flex";
+  }
+
+  function enableNotifications() {
+      alert("تم تفعيل الإشعارات ");
+      closePopup();
+  }
+
+  function disableNotifications() {
+      alert("تم إيقاف الإشعارات ");
+      closePopup();
+  }
+
+  function closePopup() {
+      document.getElementById("notificationPopup").style.display = "none";
+  }
+
+  
+  window.onload = function() {
+      setTimeout(showPopup, 500); 
+  };
+</script>
+
+<div class="font-size-controls">
+    <button onclick="changeFontSize(1)">+</button>
+    <button onclick="changeFontSize(-1)">-</button>
+    <button onclick="resetFontSize()">reset</button>
+</div>
+
+<style>
+ 
+  .font-size-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .font-size-controls button {
+    background-color: #0b3118;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .font-size-controls button:hover {
+    background-color: #64836b;
+  }
+</style>
+
+<script>
+  let currentFontSize = 16; 
+
+  function changeFontSize(change) {
+      currentFontSize += change;
+      document.body.style.fontSize = currentFontSize + "px";
+  }
+
+  function resetFontSize() {
+      currentFontSize = 16; 
+      document.body.style.fontSize = currentFontSize + "px";
+  }
+</script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hole In One - Home</title>
+    <link rel="stylesheet" href="style.css">
+
+<body>
+    <img src="photos\image_transparent.png" alt="Logo" class="logo">
+    <header>
+        <h1>Hole In One - Golf Resort</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="activities.html">Activities & Services</a></li>
+                <li><a href="pakage.html">Packages & Offers</a></li>
+                <li><a href="booknow.html">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <div class="container">
+            <h2>Welcome to Hole In One!</h2>
+            <p> أهلًا بكم في هول إن  ون!،إطلع عَلى أحدث مرافقنا
+                </p>
+
+            
+            <img src="photos\golf-ball-on-green-grass-field.webp" alt="Golf Course"
+                style="width:100%; border-radius:10px; margin-top:15px;">
+                <p> 
+                يضم منتجع هول إن ون ثلاثة ملاعب جولف عالمية المستوى، بما في ذلك ملعب "سي" "فيو" الشهير الذي يتميز بإطلالات خلابة وتجربة لعب
+                استثنائية. يوفر المنتجع إقامة فاخرة في أجنحة راقية مصممة لراحة النزلاء، بالإضافة إلى مجموعة من المطاعم والمقاهي الفاخرة التي تقدم أطباقًا مميزة تناسب جميع الأذواق. يمكن للزوار الاستمتاع بجولات الجولف الاحترافية دروس تدريبية بإشراف خبراء، جلسات تدريب رقمية متقدمة، وساحة تدريب مضاءة لتمارين ليلية. كما نقدم تأجير معدات الجولف، خدمة حمل الأدوات وعروض مخصصة للإقامات الطويلة والفعاليات الخاصة. اكتشف تجربة جولف لا مثيل لها مع خدماتنا الحصرية </p>
+    
+            <a href="booknow.html" class="button">Book Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Hole In One Golf Resort. All Rights Reserved.</p>
+    </footer>
+    <script src="backToTop.js"></script>
+</body>
+
+</html>

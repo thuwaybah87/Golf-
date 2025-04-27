@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar">
+     
+<div class="font-size-controls">
+    <button onclick="changeFontSize(1)">+</button>
+    <button onclick="changeFontSize(-1)">-</button>
+    <button onclick="resetFontSize()">reset</button>
+</div>
+
+<style>
+ 
+  .font-size-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .font-size-controls button {
+    background-color: #0b3118;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .font-size-controls button:hover {
+    background-color: #64836b;
+  }
+</style>
+
+<script>
+  let currentFontSize = 16; 
+
+  function changeFontSize(change) {
+      currentFontSize += change;
+      document.body.style.fontSize = currentFontSize + "px";
+  }
+
+  function resetFontSize() {
+      currentFontSize = 16; 
+      document.body.style.fontSize = currentFontSize + "px";
+  }
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="photos\image_transparent.png" alt="Logo" class="logo">
+<header>
+    <h1>Book Your Stay</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="activities.html">Activities & Services</a></li>
+            <li><a href="pakage.html">Packages & Offers</a></li>
+            <li><a href="booknow.html">Book Now</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="main-content">
+    <div class="container">
+        <h2>Book Your Golf Experience</h2>
+        <p>احجز تجربتك المميزة في منتجع هول إن ون بسهولة! اختر الباقة التي تناسبك، وحدد التواريخ المفضلة لديك، واترك لنا الباقي.</p>
+      
+        <section id="booking-section">
+            <div class="booking-container">
+                
+                <img src="photos\image_transparent.png" alt="Booking Image" class="booking-image">
+        
+                <form id="booking-form" class="booking-form">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" required>
+        
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" required>
+        
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="phone">Phone Number:</label>
+                    <input type="number" id="phone" name="phone" required>
+        
+                    <label for="arrival">Arrival Date:</label>
+                    <input type="date" id="arrival" name="arrival" required>
+        
+                    <label for="departure">Departure Date:</label>
+                    <input type="date" id="departure" name="departure" required>
+        
+                    <label for="package">Select a Package:</label>
+                    <select id="package" name="package" required>
+                        <option value="5-rounds">باقة الخمس جولات</option>
+                        <option value="triple-tee">باقة الثلاث جولات</option>
+                        <option value="relaxation">باقة الاستجمام</option>
+                        <option value="custom">Custom Package (Contact Us)</option>
+                    </select>
+        
+                    <label for="special-requests">Special Requests:</label>
+                    <textarea id="special-requests" name="special-requests" rows="4"></textarea>
+        
+                    <button type="submit" class="button">Submit Booking</button>
+                </form>
+            </div>
+        </section>
+        
+        <script>
+            document.getElementById("booking-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+                
+                let firstName = document.getElementById("first-name").value.trim();
+                let lastName = document.getElementById("last-name").value.trim();
+                let email = document.getElementById("email").value.trim();
+                let phone = document.getElementById("phone").value.trim();
+                let arrivalDate = new Date(document.getElementById("arrival").value);
+                let departureDate = new Date(document.getElementById("departure").value);
+
+                
+                if (firstName === "" || lastName === "" || email === "" || phone === "") {
+                    alert("يرجى ملء جميع الحقول المطلوبة.");
+                    return;
+                }
+
+              
+                let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailPattern.test(email)) {
+                    alert("يرجى إدخال بريد إلكتروني صالح.");
+                    return;
+                }
+
+               
+                let phonePattern = /^[0-9]+$/;
+                if (!phonePattern.test(phone)) {
+                    alert("يرجى إدخال رقم هاتف صالح يحتوي على أرقام فقط.");
+                    return;
+                }
+
+                if (arrivalDate >= departureDate) {
+                    alert("يجب أن يكون تاريخ المغادرة بعد تاريخ الوصول.");
+                    return;
+                }
+
+                
+                let confirmBooking = confirm("هل أنت متأكد من أنك تريد تأكيد الحجز؟");
+                if (confirmBooking) {
+                    alert("تم إرسال الحجز بنجاح!");
+                    document.getElementById("booking-form").submit();
+                }
+            });
+        </script>
+
+<footer>
+    <p>&copy; 2025 Hole In One Golf Resort. All Rights Reserved.</p>
+</footer>
+<script src="backToTop.js"></script>
+</body>
+</html>

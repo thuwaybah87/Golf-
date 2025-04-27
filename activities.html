@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar">
+   
+<div class="font-size-controls">
+    <button onclick="changeFontSize(1)">+</button>
+    <button onclick="changeFontSize(-1)">-</button>
+    <button onclick="resetFontSize()">reset</button>
+</div>
+
+<style>
+ 
+  .font-size-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .font-size-controls button {
+    background-color: #0b3118;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .font-size-controls button:hover {
+    background-color: #64836b;
+  }
+</style>
+
+<script>
+  let currentFontSize = 16; 
+
+  function changeFontSize(change) {
+      currentFontSize += change;
+      document.body.style.fontSize = currentFontSize + "px";
+  }
+
+  function resetFontSize() {
+      currentFontSize = 16; 
+      document.body.style.fontSize = currentFontSize + "px";
+  }
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities & Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="C:\Users\user\OneDrive\Desktop\b1.2\b1.2\photos\image_transparent.png" alt="Logo" class="logo">
+<header>
+    <h1>Activities & Services</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="activities.html">Activities & Services</a></li>
+            <li><a href="pakage.html">Packages & Offers</a></li>
+            <li><a href="booknow.html">Book Now</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="main-content">
+    <div class="container">
+        <h2>Activities & Services</h2>
+        <p>يقدم منتجع هول إن ون مجموعة متنوعة من الأنشطة والخدمات التي تناسب جميع زوار المنتجع.</p>
+        
+        <section id="golf-activities">
+            
+            <div class="images-container">
+                <div class="image-wrapper">
+                    <img src="photos\3688330e260ba59611b8ce238bbcef4d.jpg" alt="Golf Training" class="golf-image">
+                    <p class="image-text">تدريب الجولف: مدربين قولف يتابع لعبك</p>
+                </div>
+                
+                <div class="image-wrapper">
+                    <img src="photos\1792f79c58654e6fd6f73fc2af1f2beb.jpg" alt="Golf Equipment Rental" class="golf-image">
+                    <p class="image-text">تأجير سيارات قولف: يمكن لزوارنا استئجار ما بحتاجونه</p>
+                </div>
+                
+                <div class="image-wrapper">
+                    <img src="photos\1ffb2e39448d5094005b268e3079e618.jpg" alt="Golf Equipment Rental" class="golf-image">
+                    <p class="image-text">مطاعم: طعام فاخر مع اطلالة مثالية</p>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Hole In One Golf Resort. All Rights Reserved.</p>
+</footer>
+<script src="backToTop.js"></script>
+</body>
+</html>

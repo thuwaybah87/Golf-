@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar">
+ 
+<div class="font-size-controls">
+    <button onclick="changeFontSize(1)">+</button>
+    <button onclick="changeFontSize(-1)">-</button>
+    <button onclick="resetFontSize()">reset</button>
+</div>
+
+<style>
+ 
+  .font-size-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .font-size-controls button {
+    background-color: #0b3118;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .font-size-controls button:hover {
+    background-color: #64836b;
+  }
+</style>
+
+<script>
+  let currentFontSize = 16; 
+
+  function changeFontSize(change) {
+      currentFontSize += change;
+      document.body.style.fontSize = currentFontSize + "px";
+  }
+
+  function resetFontSize() {
+      currentFontSize = 16; 
+      document.body.style.fontSize = currentFontSize + "px";
+  }
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages & Offers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="photos\image_transparent.png" alt="Logo" class="logo">
+<header>
+    <h1>Packages & Offers</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="activities.html">Activities & Services</a></li>
+            <li><a href="pakage.html">Packages & Offers</a></li>
+            <li><a href="booknow.html">Book Now</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="main-content">
+    <div class="container">
+        <h2>Special Offers</h2>
+        <p>استمتع بعروضنا الحصرية التي تشمل إقامة فاخرة وجولات جولف رائعة.</p>
+        
+        <section id="golf-activities">
+            
+            <div class="images-container">
+                <div class="image-wrapper">
+                    <img src="photos\07a87ba048224fa16a2f19c59ca1f992.jpg" alt="Golf Training" class="golf-image">
+                    <p class="image-text">عرض الباقة الخامسة! :ليلتين بغرفة مزدوجة فاخرة بفندقنا
+                        جولة في ملعبنا الشهير
+                        خمس جولات - 18 حفرة
+                        20% off
+                    </p>
+                </div>
+                
+                <div class="image-wrapper">
+                    <img src="photos\f41976d02cdba5340cde602a23dbbd8e.jpg" alt="Golf Equipment Rental" class="golf-image">
+                    <p class="image-text">عرض الباقة الثالثة! : ليلة بغرفة منفردة بفندقنا
+                        فطور فاخر واطلالة مثالية
+                        ثلاث جولات - 15 حفرة
+                        15% off
+                    </p>
+                </div>
+                
+                <div class="image-wrapper">
+                    <img src="photos\d6ca69afa91ecd8bb0a8995b33a481bb.jpg" alt="Golf Equipment Rental" class="golf-image">
+                    <p class="image-text">عرض الإستجمام :ثلاث ليالي بجناح فاخر
+                        فطور وغداء فاخر واطلالة مثالية
+                        جولة في ملعبنا الشهير
+                    30% off
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="comments">
+            <h2>تعليقات الزوار</h2>
+            <button id="toggle-comments">إظهار / إخفاء التعليقات</button>
+            <div id="comments-container">
+                <div class="comment">
+                    <p class="username">أبو علي</p>
+                    <p class="text">"رحت عليه مع المدام، فطورهم مثالي"</p>
+                </div>
+                <div class="comment">
+                    <p class="username">صبحية</p>
+                    <p class="text">" زوجي أخذني شهر عسل الملعب ماشي حاله يعني بس انا ما حبيت كثير"</p>
+                </div>
+                <div class="comment">
+                    <p class="username">عبد الحي</p>
+                    <p class="text">"رهيب رهيب فوق التقييم العدة عندهم ممتازة والمدربين محترفين يرجل"</p>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Hole In One Golf Resort. All Rights Reserved.</p>
+</footer>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let toggleButton = document.getElementById("toggle-comments");
+        let commentsContainer = document.getElementById("comments-container");
+
+        toggleButton.addEventListener("click", function () {
+            if (commentsContainer.style.display === "none") {
+                commentsContainer.style.display = "block";
+                toggleButton.textContent = "Hide";
+            } else {
+                commentsContainer.style.display = "none";
+                toggleButton.textContent = "Show";
+            }
+        });
+
+   
+        commentsContainer.style.display = "none";
+    });
+</script>
+<script src="backToTop.js"></script>
+
+</body>
+</html>
+
